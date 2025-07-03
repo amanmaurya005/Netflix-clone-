@@ -97,9 +97,9 @@ section h1 {
 }
 .category {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 1.2rem;
     margin-bottom: 3rem;
+    overflow-x: auto;
     z-index: 5;
 }
 .movies {
@@ -139,7 +139,7 @@ section h1 {
 }
 
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .movies img {
         height: 220px;
     }
