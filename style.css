@@ -14,7 +14,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px 2.5rem;
-    background-color: #222; /* Dark header background */
+    background-color: #222; 
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -138,7 +138,7 @@ section h1 {
     z-index: 2;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
     .movies img {
         height: 220px;
