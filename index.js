@@ -1,7 +1,7 @@
 const section = document.querySelector("section");
 const search = document.getElementById("search");
 
-const API_KEY = "d5af395b4be1c79f620c2434de653f06";
+const API_KEY = "3f2d406b191dd8b66c0c355894cea594";
 const URL = "https://api.themoviedb.org/3";
 
 const urls = {
