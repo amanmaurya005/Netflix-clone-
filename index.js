@@ -2,19 +2,19 @@ const section = document.querySelector("section");
 const search = document.getElementById("search");
 
 const API_KEY = "d5af395b4be1c79f620c2434de653f06";
-const BASE_URL = "https://api.themoviedb.org/3";
+const URL = "https://api.themoviedb.org/3";
 
 const urls = {
-    popular: BASE_URL + "/movie/popular?api_key=" + API_KEY + "&language=en-US&page=1",
-    upcoming: BASE_URL + "/movie/upcoming?api_key=" + API_KEY + "&language=en-US&page=1",
-    originals: BASE_URL + "/discover/tv?api_key=" + API_KEY + "&with_networks=213",
-    trending: BASE_URL + "/trending/movie/day?language=en-US&api_key=" + API_KEY,
-    topRated: BASE_URL + "/movie/top_rated?language=en-US&page=1&api_key=" + API_KEY,
-    actionMovies: BASE_URL + "/discover/movie?language=en-US&sort_by=popularity.desc&with_genres=28&api_key=" + API_KEY,
-    comedyMovies: BASE_URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=35",
-    horrorMovies: BASE_URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=27",
-    romanticMovies: BASE_URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=10749",
-    documentaries: BASE_URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=99"
+    popular: URL + "/movie/popular?api_key=" + API_KEY + "&language=en-US&page=1",
+    upcoming: URL + "/movie/upcoming?api_key=" + API_KEY + "&language=en-US&page=1",
+    originals: URL + "/discover/tv?api_key=" + API_KEY + "&with_networks=213",
+    trending: URL + "/trending/movie/day?language=en-US&api_key=" + API_KEY,
+    topRated: URL + "/movie/top_rated?language=en-US&page=1&api_key=" + API_KEY,
+    actionMovies: URL + "/discover/movie?language=en-US&sort_by=popularity.desc&with_genres=28&api_key=" + API_KEY,
+    comedyMovies: URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=35",
+    horrorMovies: URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=27",
+    romanticMovies: URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=10749",
+    documentaries: URL + "/discover/movie?api_key=" + API_KEY + "&with_genres=99"
 };
 
 let allMovies = [];
