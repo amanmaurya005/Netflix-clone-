@@ -22,7 +22,7 @@ let allMovies = [];
 function setRandomBanner(movies) {
   const banner = document.getElementById("banner");
 
-  if (!movies || movies.length === 0 ) return;
+  if (!movies || movies.length === 0) return;
 
   const validMovies = movies.filter(movie => movie.backdrop_path);
   const randomMovie = validMovies[Math.floor(Math.random() * validMovies.length)];
@@ -47,28 +47,30 @@ function setRandomBanner(movies) {
 
 async function fetchAllCategories() {
   try {
-    const data = await Promise.all(Object.values(urls).map(url => fetch(url).then(res => res.json())));
-    console.log(data);
-
-
+    const data = await Promise.all(
+      Object.values(urls).map(url => fetch(url).then(res => res.json()))
+    );
 
     const categories = Object.keys(urls);
-    console.log(categories);
-
 
     categories.forEach((category, index) => {
       const results = data[index].results;
-      console.log(results);
-
       if (!results) return;
 
-      allMovies = allMovies.concat(results);
+      allMovies = [...allMovies, ...results];
 
       if (category === "popular") {
         setRandomBanner(results);
       }
+
       showData(results, category);
     });
+
+    const uniqueMovies = new Map();
+    allMovies.forEach(movie => {
+      uniqueMovies.set(movie.id, movie);
+    });
+    allMovies = Array.from(uniqueMovies.values());
 
   } catch (error) {
     console.error("Error fetching movie categories:", error);
@@ -118,7 +120,6 @@ function handleFilters() {
 
   if (searchTerm === "") {
     section.innerHTML = "";
-    allMovies = [];
     fetchAllCategories();
     return;
   }
@@ -136,7 +137,6 @@ function handleFilters() {
     showData(filtered);
   }
 }
-
 
 search.addEventListener("input", handleFilters);
 
